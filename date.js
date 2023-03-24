@@ -1,8 +1,8 @@
-function generateLastSevenDays() {
+function generateLastSevenDays(n) {
   const days = [];
   const today = new Date();
   
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < n; i++) {
     const currentDate = new Date(today);
     currentDate.setDate(currentDate.getDate() - i);
     
@@ -17,5 +17,5 @@ function generateLastSevenDays() {
   return days;
 }
 
-const lastSevenDays = generateLastSevenDays();
+const lastSevenDays = generateLastSevenDays(3);
 console.log(lastSevenDays);
