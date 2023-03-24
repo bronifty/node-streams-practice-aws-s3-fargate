@@ -1,4 +1,4 @@
-function generateLastSevenDays(n) {
+function generateDateRangeArray(n) {
   const days = [];
   const today = new Date();
   
@@ -17,5 +17,5 @@ function generateLastSevenDays(n) {
   return days;
 }
 
-const lastSevenDays = generateLastSevenDays(3);
-console.log(lastSevenDays);
+const dateRange = generateDateRangeArray(2);
+console.log(dateRange);
