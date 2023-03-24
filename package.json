@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.1342.0",
+    "dotenv": "^16.0.3",
     "files.com": "^1.0.257"
   }
 }

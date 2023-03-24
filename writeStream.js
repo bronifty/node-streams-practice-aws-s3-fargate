@@ -1,12 +1,13 @@
 // Import the required modules
 const AWS = require('aws-sdk');
 const fs = require('fs');
+require('dotenv').config();
 
 // Configure the AWS SDK
 AWS.config.update({
-  accessKeyId: 'your_access_key_id',
-  secretAccessKey: 'your_secret_access_key',
-  region: 'your_region'
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
+  region: process.env.AWS_REGION
 });
 
 // Create an instance of the S3 client
@@ -14,10 +15,10 @@ const s3 = new AWS.S3();
 
 // Define the S3 bucket, key, and local file path
 const params = {
-  Bucket: 'your_bucket_name',
-  Key: 'your_file_key'
+  Bucket: process.env.BUCKET_SOURCE,
+  Key: 'file1'
 };
-const localFilePath = 'local_file_path.ext';
+const localFilePath = './data/file1';
 
 // Create a readable stream from the S3 bucket
 const s3Stream = s3.getObject(params).createReadStream();
