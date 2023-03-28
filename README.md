@@ -4,6 +4,14 @@
 - It is meant to run in Fargate. I am working on figuring out the best way to get it into Fargate as a Task definition.
 - The error handling is nonexistent. I am working on that as well.
 
+### Setup
+
+```bash
+yarn && yarn start
+```
+
+### ChatGPT Thread on PassThrough Streams
+
 A PassThrough stream is a type of stream that acts as a "middleman" between a readable stream (input) and a writable stream (output). It's a simple implementation of a Transform stream that doesn't modify the data passing through it. It's part of the Node.js built-in stream module.
 
 In the context of streaming data, a PassThrough stream can be useful when you want to perform some operations or monitoring on the data without modifying it, or when you want to pipe data through multiple streams.
