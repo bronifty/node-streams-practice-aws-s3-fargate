@@ -1,4 +1,4 @@
-const uploadApi = require("./UploadApi2");
+const uploadApi = require("./UploadApi");
 
 uploadApi.streamUpload({
   // uploadType: "s3",
