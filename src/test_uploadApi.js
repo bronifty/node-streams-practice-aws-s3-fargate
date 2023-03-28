@@ -1,15 +1,4 @@
 const uploadApi = require("./UploadApi");
-// const filesClient = require("./files_api_min");
-
-// const readStream = s3Api.readStreamFromS3({
-//   Bucket: "your_bucket",
-//   Key: "your_key",
-// });
-
-// const { writeStream, upload } = s3Api.writeStreamToS3({
-//   Bucket: "your_bucket",
-//   Key: "your_key",
-// });
 
 uploadApi.streamUpload({
   // uploadType: "s3",

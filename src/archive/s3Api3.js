@@ -2,7 +2,7 @@ const AWS = require("aws-sdk");
 require("dotenv").config();
 const fs = require("fs");
 const stream = require("stream");
-const filesClient = require("./files_api_min");
+const filesClient = require("./FilesClient");
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY,

@@ -1,5 +1,5 @@
 const stream = require("stream");
-const filesClient = require("./files_api_min");
+const filesClient = require("./FilesClient");
 const S3 = require("./s3Client");
 
 class UploadApi {
@@ -73,6 +73,14 @@ class UploadApi {
   }
 }
 
-// Usage example:
 const uploadApi = new UploadApi();
 module.exports = uploadApi;
+
+// Usage example:
+// uploadApi.streamUpload({
+//   // uploadType: "s3",
+//   sourceKey: "20230321/20230321.csv",
+//   sourceBucket: "bronifty.xyz",
+//   targetKey: "20230321.csv",
+//   targetBucket: "bronifty.xyz.target",
+// });
