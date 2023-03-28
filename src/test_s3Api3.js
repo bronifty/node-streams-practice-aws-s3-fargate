@@ -12,7 +12,7 @@ const s3Api = require("./s3Api3");
 // });
 
 s3Api.streamUpload({
-  uploadType: "files",
+  // uploadType: "s3",
   sourceKey: "20230321/20230321.csv",
   sourceBucket: "bronifty.xyz",
   targetKey: "20230321.csv",

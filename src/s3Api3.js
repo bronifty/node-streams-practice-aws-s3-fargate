@@ -44,7 +44,7 @@ class S3Api {
   }
 
   async streamUpload({
-    uploadType,
+    uploadType = "files",
     sourceKey,
     sourceBucket,
     targetKey,
