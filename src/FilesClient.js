@@ -1,4 +1,4 @@
-const fs = require("fs");
+const stream = require("stream");
 const Files = require("files.com/lib/Files").default;
 const File = require("files.com/lib/models/File").default;
 require("dotenv").config();
@@ -11,9 +11,20 @@ class FilesClient {
   async upload({ Key, Body }) {
     await File.uploadData(Key, Body);
   }
+  writeStreamToFiles({ Bucket, Key }) {
+    const pass = new stream.PassThrough();
+    // filesClient.upload({ Key: "file3.csv", Body });
+    return {
+      writeStream: pass,
+      upload: this.upload({
+        Key,
+        Bucket,
+        Body: pass,
+      }),
+    };
+  }
 }
 const filesClient = new FilesClient();
-
 module.exports = filesClient;
 
 // Usage example:
