@@ -1,5 +1,5 @@
 const filesClient = require("./FilesClient");
-const s3Client = require("./s3Client");
+const s3Client = require("./S3Client");
 
 class UploadApi {
   async streamUpload({

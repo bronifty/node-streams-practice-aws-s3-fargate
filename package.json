@@ -1,0 +1,17 @@
+{
+  "name": "fargate",
+  "version": "1.0.0",
+  "description": "- This stream copies files from a source S3 bucket to either a destination s3 bucket or files.com bucket. - It is meant to run in Fargate. I am working on figuring out the best way to get it into Fargate as a Task definition. - The error handling is nonexistent. I am working on that as well.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1345.0",
+    "dotenv": "^16.0.3",
+    "files.com": "^1.0.259"
+  }
+}

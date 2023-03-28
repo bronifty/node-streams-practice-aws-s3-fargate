@@ -1,5 +1,5 @@
 const uploadApi = require("./UploadApi");
-const generateDateRangeArray = require("./GenerateDateRangeArray");
+const generateDateRangeArray = require("./generateDateRangeArray");
 
 const dateRangeArray = generateDateRangeArray(10);
 console.log(dateRangeArray);
