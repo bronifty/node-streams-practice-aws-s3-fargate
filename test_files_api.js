@@ -5,7 +5,7 @@ const Files = require("files.com/lib/Files").default;
 const File = require("files.com/lib/models/File").default;
 const Folder = require("files.com/lib/models/Folder").default;
 const { LogLevel } = require("files.com/lib/Logger").default;
-require("dotenv").config("../.env");
+require("dotenv").config();
 const FILES_API_KEY = process.env.FILES_API_KEY;
 const FILES_SUBDOMAIN = process.env.FILES_SUBDOMAIN;
 // set your subdomain or custom domain
@@ -51,11 +51,18 @@ class FilesClient {
     await File.uploadData(Key, Body);
   }
 }
-const filesClient = new FilesClient();
 
 // Usage example:
-// const Body = fs.createReadStream("./file3.csv");
-// filesClient.upload({ Key: "file3.csv", Body });
+const filesClient = new FilesClient();
+const Body = fs.createReadStream("./file3.csv");
+filesClient.upload({ Key: "file3.csv", Body });
+
+// upload({
+//   destinationFileName: "test.txt",
+//   sourceFilePath: "./examplefile",
+// });
+// console.log("Files API Key: ", FILES_API_KEY);
+// console.log("test");
 
 module.exports = {
   filesClient,
