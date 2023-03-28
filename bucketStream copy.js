@@ -17,12 +17,12 @@ const s3 = new AWS.S3();
 // Define the source and destination S3 buckets and keys
 const sourceParams = {
   Bucket: process.env.BUCKET_SOURCE,
-  Key: 'file2'
+  Key: 'file3.csv'
 };
 
 const destinationParams = {
   Bucket: process.env.BUCKET_TARGET,
-  Key: 'file2'
+  Key: 'file3.csv'
 };
 
 // Create a readable stream from the source S3 bucket
