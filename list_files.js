@@ -5,7 +5,7 @@ const dateRange = generateDateRangeArray(7);
 // console.log(dateRange);
 
 // loop over the dateRange array and for each date, list the files in the folder
-sortedDateRange.forEach((date) => {
+dateRange.forEach((date) => {
   const params = {
     Bucket: "bronifty.xyz",
     Prefix: `${date}/`,
@@ -17,7 +17,10 @@ sortedDateRange.forEach((date) => {
     } else {
       console.log("Contents of the folder:");
       data.Contents.forEach((content) => {
-        console.log(`File: ${content.Key}`);
+        if (content.Key.endsWith(".csv")) {
+          console.log(`File: ${content.Key}`);
+        }
+        // console.log(`File: ${content.Key}`);
       });
     }
   });
