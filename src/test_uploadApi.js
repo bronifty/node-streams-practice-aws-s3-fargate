@@ -1,11 +1,11 @@
 const uploadApi = require("./UploadApi");
 const generateDateRangeArray = require("./GenerateDateRangeArray");
 
-const dateRangeArray = generateDateRangeArray(2);
+const dateRangeArray = generateDateRangeArray(10);
 console.log(dateRangeArray);
 
-dateRangeArray.forEach((date) => {
-  uploadApi.streamUpload({
+const uploadPromises = dateRangeArray.map((date) => {
+  return uploadApi.streamUpload({
     // uploadType: "s3",
     sourceKey: `${date}/${date}.csv`,
     sourceBucket: "bronifty.xyz",
@@ -13,10 +13,11 @@ dateRangeArray.forEach((date) => {
     targetBucket: "bronifty.xyz.target",
   });
 });
-// uploadApi.streamUpload({
-//   // uploadType: "s3",
-//   sourceKey: "20230321/20230321.csv",
-//   sourceBucket: "bronifty.xyz",
-//   targetKey: "20230321.csv",
-//   targetBucket: "bronifty.xyz.target",
-// });
+
+Promise.all(uploadPromises)
+  .then(() => {
+    console.log("All files uploaded successfully.");
+  })
+  .catch((error) => {
+    console.error("Error uploading files:", error);
+  });

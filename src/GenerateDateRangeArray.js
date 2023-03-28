@@ -1,22 +1,3 @@
-// function generateDateRangeArray(n) {
-//   const days = [];
-//   const today = new Date();
-
-//   for (let i = 0; i < n; i++) {
-//     const currentDate = new Date(today);
-//     currentDate.setDate(currentDate.getDate() - i);
-
-//     const year = currentDate.getFullYear();
-//     const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-//     const day = String(currentDate.getDate()).padStart(2, '0');
-
-//     const formattedDate = `${year}${month}${day}`;
-//     days.push(formattedDate);
-//   }
-
-//   return days;
-// }
-
 function generateDateRangeArray(n) {
   const days = [];
   const today = new Date().toLocaleString("en-US", {
@@ -41,5 +22,6 @@ function generateDateRangeArray(n) {
 
 module.exports = generateDateRangeArray;
 
+// usage example:
 // const dateRange = generateDateRangeArray(7);
 // console.log(dateRange);
