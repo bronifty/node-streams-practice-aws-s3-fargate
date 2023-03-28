@@ -1,4 +1,4 @@
-const uploadApi = require("./uploadApi");
+const uploadApi = require("./UploadApi");
 // const filesClient = require("./files_api_min");
 
 // const readStream = s3Api.readStreamFromS3({
