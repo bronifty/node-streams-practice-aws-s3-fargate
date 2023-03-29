@@ -3,6 +3,7 @@
 - This stream copies files from a source S3 bucket to either a destination s3 bucket or files.com bucket.
 - It is meant to run in Fargate. I am working on figuring out the best way to get it into Fargate as a Task definition.
 - The error handling is nonexistent. I am working on that as well.
+- It works fine looping over the date folders and uploading files of size 2GB a piece. I would like to see it fully upload a single file before it moves on to the next file. It looks like it's trying to do it all at once (without promise.all) so obviously i need to look at the logic and put some console.logs in there to see what's going on.
 
 ### Setup
 
